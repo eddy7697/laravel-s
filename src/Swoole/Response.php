@@ -36,7 +36,7 @@ abstract class Response implements ResponseInterface
             $this->laravelResponse->headers->allPreserveCaseWithoutCookies() : $this->laravelResponse->headers->allPreserveCase();
         foreach ($headers as $name => $values) {
             foreach ($values as $value) {
-                $this->swooleResponse->header($name, $value);
+                $this->swooleResponse->header($name, $value, false);
             }
         }
     }
